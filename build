@@ -1,0 +1,26 @@
+# =============================================================================
+# CD2
+# Build Script
+# by Andreas Socratous
+# Jan 2023
+# =============================================================================
+
+# Compile the program
+clang -Wall -Wextra -pedantic -O3 \
+-framework Cocoa \
+Mods/Fund/HomeDir.m \
+Mods/Fund/Fund.c \
+Mods/Script/Script.c \
+main.c -o cd2
+
+# Pack as app
+if [ -d "cd2.app" ]; then
+    rm -r "cd2.app"
+fi
+
+mkdir cd2app cd2app/Contents cd2app/Contents/Resources cd2app/Contents/MacOS
+cp Resources/AppIcon.icns cd2app/Contents/Resources/
+cp Resources/info.plist cd2app/Contents/
+cp cd2 cd2app/Contents/MacOS/
+mv cd2app "cd2.app"
+
