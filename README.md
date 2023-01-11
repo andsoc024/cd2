@@ -2,7 +2,9 @@
 Open the terminal at the active Finder folder on MacOS
 
 To compile:
-Just run the build script: ./build
+Just run the build script. 
+  chmod +x build
+  ./build
 
 To use: 
 1) Drag the app in the Applications folder
